@@ -171,10 +171,12 @@
             "wps-office-et.desktop",
             "wps-office-wpp.desktop",
             "wps-office-pdf.desktop",
-	    "tr.org.pardus.software.desktop",
             "e-tahta.desktop",
+            "pardus-pen.desktop",
+            "tr.org.pardus.software.desktop",
+            "betikyukleyici.desktop",
             "tr.org.pardus.eta-exit.desktop"
-         ]
+        ]
     },
     "group-apps": {
         "type": "checkbox",

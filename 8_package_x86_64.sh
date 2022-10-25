@@ -20,11 +20,11 @@ chroot chroot apt-get install network-manager git make wget -y
 chroot chroot apt-get install gtk3-nocsd e2fsprogs dosfstools qml-module-qt-labs-platform wpasupplicant ntfs-3g -y
 
 #### e-ag
-chroot chroot apt install e-ag-client e-ag-x11client libnss3-tools -y
-chroot chroot apt remove xrdp -y
-chroot chroot apt install xrdp -y
-chroot chroot apt install e-ag-client e-ag-x11client -y
-chroot chroot apt install usbutils -y
+#chroot chroot apt install e-ag-client e-ag-x11client libnss3-tools -y
+#chroot chroot apt remove xrdp -y
+#chroot chroot apt install xrdp -y
+#chroot chroot apt install e-ag-client e-ag-x11client -y
+chroot chroot apt install usbutils libnss3-tools -y
 
 chroot chroot apt-get install -f -y # eksik bağımlılıkları tamamlaması için.
 chroot chroot apt --fix-broken install -y

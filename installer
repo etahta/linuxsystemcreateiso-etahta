@@ -107,7 +107,7 @@ if lsusb | grep -qE "(6615:0084|6615:0085|6615:0086|6615:0087|6615:0088|6615:0c2
 echo "faz-1-2"
 else
 echo "faz-3"
-	chroot /target touch /etc/skel/faz3
+	#chroot /target touch /etc/skel/faz3
 	chroot /target cp /etc/fazconfig/cinnamon-monitors.xml /etc/skel/.config/cinnamon-monitors.xml
 	chroot /target rm -rf /etc/skel/.config/pulse
 	chroot /target cp -rf /etc/fazconfig/pulse /etc/skel/.config/
@@ -174,8 +174,8 @@ echo "GRUB_DEFAULT=0" >> /target/etc/default/grub
 echo "GRUB_TIMEOUT=0" >> /target/etc/default/grub
 echo "GRUB_HIDDEN_TIMEOUT=0" >> /target/etc/default/grub
 echo "GRUB_DISABLE_OS_PROBER=true" >> /target/etc/default/grub
-echo "GRUB_BACKGROUND='/usr/share/images/ilkresim.jpg'" >> /target/etc/default/grub
-chroot /target plymouth-set-default-theme -R spinfinity
+#echo "GRUB_BACKGROUND='/usr/share/images/ilkresim.jpg'" >> /target/etc/default/grub
+chroot /target plymouth-set-default-theme -R dolunay
 
 chroot /target update-grub  || fallback
 [[ -f /target/install ]] && rm -f /target/install || true
