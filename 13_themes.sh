@@ -6,7 +6,7 @@ echo "açılış teması yapılandırılıyor"
 
 #run install
 chroot chroot apt install plymouth* -y
-cp pardus.png chroot/usr/share/plymouth/dolunay/pardus.png
+cp pardus.png chroot/usr/share/plymouth/themes/dolunay/pardus.png
 
 chroot chroot plymouth-set-default-theme -R dolunay
 
