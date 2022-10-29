@@ -109,8 +109,10 @@ else
 echo "faz-3"
 	#chroot /target touch /etc/skel/faz3
 	chroot /target cp /etc/fazconfig/cinnamon-monitors.xml /etc/skel/.config/cinnamon-monitors.xml
-	chroot /target rm -rf /etc/skel/.config/pulse
-	chroot /target cp -rf /etc/fazconfig/pulse /etc/skel/.config/
+	#chroot /target rm -rf /etc/skel/.config/pulse
+	#chroot /target cp -rf /etc/fazconfig/pulse /etc/skel/.config/
+	chroot /target dpkg -i /etc/fazconfig/eta-pulse-config_0.4.0_amd64.deb
+	
 	echo "Dosya Kopyalandı.."
 fi
 echo "-------Faz Ayar Kurulumu Tamamlandı---------"
