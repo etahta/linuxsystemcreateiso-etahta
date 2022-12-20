@@ -16,6 +16,9 @@ mkdir chroot  # || true
 ln -s sid /usr/share/debootstrap/scripts/yirmibir
 
 #debootstrap --arch=amd64 --no-merged-usr sid chroot https://deb.debian.org/debian
+#echo 'deb http://packages.linuxmint.com/pool/' > chroot/etc/apt/sources.list
+
+#debootstrap --arch=amd64 --no-merged-usr sid chroot https://deb.debian.org/debian
 #echo 'deb https://deb.debian.org/debian sid main contrib non-free' > chroot/etc/apt/sources.list
 
 #debootstrap --arch=amd64 --no-merged-usr testing chroot https://deb.debian.org/debian

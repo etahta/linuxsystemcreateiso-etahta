@@ -171,6 +171,24 @@ chroot /target timedatectl set-timezone Europe/Istanbul || true
 ln -s ../usr/share/zoneinfo/Turkey /target/etc/localtime
 chroot /target hwclock --systohc
 
+cat > /target/etc/default/keyboard << EOF
+XKBMODEL="pc105"
+XKBLAYOUT="tr"
+XKBVARIANT=""
+XKBOPTIONS=""
+BACKSPACE="guess"
+EOF
+#*****************************terminal türkçe karakter ayarlanmazı*********
+cat > /target/etc/default/console-setup << EOF
+ACTIVE_CONSOLES="/dev/tty[1-6]"
+CHARMAP="UTF-8"
+CODESET="Lat15"
+FONTFACE="Fixed"
+FONTSIZE="8x16"
+EOF
+chroot /target setupcon
+chroot /target setupcon --save
+#**************************************************************************
 cat > /target/etc/X11/xorg.conf.d/10-keyboard.conf << EOF
 Section "InputClass"
 Identifier "system-keyboard"
@@ -180,6 +198,7 @@ Option "XkbModel" "pc105"
 #Option "XkbVariant" "f"
 EndSection
 EOF
+chroot /target touch /usr/share/locale/locale.alias
 chroot /target locale-gen
 chroot /target echo "KEYMAP=trq" > /target/etc/vconsole.conf
 
