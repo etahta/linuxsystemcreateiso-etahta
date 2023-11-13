@@ -23,6 +23,7 @@ jobs:
                     #pwd
                     bash createIso.sh
                     mv *.iso /output/etahta.iso
+                    rm -rf ./*
           - uses: "marvinpinto/action-automatic-releases@latest"
             with:
                 repo_token: "${{ secrets.GITHUB_TOKEN }}"
